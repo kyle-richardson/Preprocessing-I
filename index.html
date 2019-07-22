@@ -15,25 +15,26 @@
 
 <body>
   <header>
-      <nav>
+      <nav id = "navigation">
         <a href="#">Home</a>
         <a href="#">Portfolio</a>
         <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a class="contact-nav" href="#contact-info">Contact</a>
       </nav>
+      
   </header>
   <section class="top">
     <img class="self-photos" src="./img/self.jpg" alt="self photo">
     <h1>Jonny Appleseed - Web Dev</h1>
     <h4>Technology is my jam!</h4>
-    <hr>
+    <div class="line"></div>
     <p>Occasionally I have time to work on side project, if you're interested, let me know by signing up on this website</p>
     <button>Let's Team Up</button>
   </section>
   <section class="main">
     <div>
       <h3>Listen Up...</h3>
-      <p>Aliquam elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.</p>    
+      <p>Aliquam elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis. Aliquam elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis. Aliquam elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.</p>    
     </div>
     <div>
       <h3>Stuff I'm Good At</h3>
@@ -96,9 +97,27 @@
       </tr>
     </table>
   </section>
+  
   <footer>
-    <p class = "copyright">Copyright Awesomeness 2019</p>
+      <div id= "contact-info">
+          <h3>My Contact Info</h3>
+          <ul>
+            <li class="name">Jonny Appleseed</li>
+            <li>1 Test Dr.</li>
+            <li>Hello, TX, 77777</li><br />
+            <li>555-555-5555</li>
+            <li>jonny.theman@noreply.com</li>
+          </ul>
+      </div>
+      <div class="icons-div">
+          <ul class="icons">
+            <li><a href="#" class="linkedin"><img src ="./img/linkedin.png"><span>LinkedIn</span></a></li>
+            <li><a href="#" class="github"><img src ="./img/Github.png"><span>GitHub</span></a></li>
+            <li><a href="#" class="envelope"><img src ="./img/mailicon.jpg"><span>Email</span></a></li>
+          </ul>
+        </div>
   </footer>
+  <p class = "copyright">Copyright Awesomeness 2019</p>
 
 </body>
 </html>

@@ -37,6 +37,7 @@ body {
 html {
 	width: 850px;
 	margin: auto;
+	font-family: 'Titillium Web', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -65,17 +66,50 @@ a {
 	}
 }
 
+button {
+
+	border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
+@light-color: lightgray;
+@dark-color: gray;
+@button-color: teal;
+
+
 h1 {
 	font-size: 40px;
+	margin-bottom: 5px;
 
 }
 h3 {
 	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 5px;
 }
 
 h4 {
@@ -85,9 +119,12 @@ h4 {
 table {
 	width: 100%;
 	tr {
-		border: 1px solid black;
+		border: 1px solid @light-color;
 		th {
 			font-weight: bold;
+		}
+		td {
+			padding: 10px;
 		}
 	}
 }
@@ -101,29 +138,54 @@ body {
 }
 
 header {
-	nav {
+	.contact-info {
+		display: none;
+	}
+	#navigation {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-between;
 		align-content: baseline;
-		a {
-			margin: 0 30px;
-		}
+		width: 40%;
 	}
 }
 
 .top {
 	display: box;
-	border: 1px solid black;
-	background-color: lightblue;
-	padding: 10px;
+	border: 1px solid @light-color;
+	background-color: @light-color;
+	padding: 20px 20px 50px 20px;
 	margin: 20px auto;
+	border-radius: 8px;
+	.self-photos {
+		margin-bottom: 20px;
+	}
+	.line {
+		border: 1px solid @dark-color;
+		margin: 20px 0;
+	}
+	button {
+		background-color: white;
+		border: 1px solid @dark-color;
+		border-radius: 4px;
+		padding: 7px 20px;
+		margin: 10px auto;
+		&:hover {
+			border-color: @button-color;
+			color: @button-color;
+		}
+
+		&:active {
+			background-color: @light-color;
+		}
+	}
 }
 
 .main {
-	margin: 20px auto;
+	margin: 30px auto;
 	display: flex;
+	justify-content: space-between;
 	div {
-		width: 50%;
+		width: 48%;
 	}
 }
 
@@ -133,25 +195,49 @@ header {
 		width: 100%;
 		text-align: left;
 		.dark-cell {
-			background-color: lightgray;
+			background-color: @light-color;
 		}
 		.first-column {
-			padding: 8px 20px 8px 4px;
+			padding: 10px 20px 10px 4px;
 		}
 		.second-column {
-			padding: 8px 30px 8px 0;
+			padding: 10px 30px 10px 0;
 		}
 		.third-column {
-			padding: 8px 30px 8px 0;
+			padding: 10px 30px 10px 0;
 		}
 		.fourth-column {
-			padding: 8px 30px 8px 0;
+			padding: 10px 30px 10px 0;
 		}
 	}
 }
 
-footer {
-	padding-bottom: 30px;
-	background-color: gray;
-	text-align: center;
+#contact-info {
+	margin: 20px 0;
 }
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	div {
+		width: 48%;
+	}
+	.icons-div {
+		ul {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			li span{
+				padding-bottom: 20px;
+			}
+		}
+	}
+}
+
+.copyright {
+	padding-top: 20px;
+	color: white;
+	text-align: center;
+	padding-bottom: 30px;
+	background-color: @dark-color;
+  }
