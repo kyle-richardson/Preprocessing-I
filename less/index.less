@@ -32,6 +32,10 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+
+html {
+	width: 850px;
+}
 ol, ul {
 	list-style: none;
 }
@@ -64,6 +68,20 @@ a {
     box-sizing: border-box;
 }
 
+table {
+
+	tr {
+		border: 1px solid black;
+		th {
+			font-weight: bold;
+		}
+
+		td {
+
+		}
+	}
+}
+
 html, body {
     height: 100%;
 }
@@ -83,4 +101,47 @@ header {
 	}
 }
 
+.top {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	border: 1px solid black;
+	background-color: lightblue;
+	.self-photo {
 
+	}
+}
+
+.main {
+	display: flex;
+	div {
+		width: 49%;
+	}
+}
+
+.lower {
+	table {
+		width: 100%;
+		text-align: left;
+		.dark-cell {
+			background-color: lightgray;
+		}
+		.first-column {
+			padding: 5px 20px;
+		}
+		.second-column {
+			padding: 5px 20px;
+		}
+		.third-column {
+			padding: 5px 20px;
+		}
+		.fourth-column {
+			padding: 5px 20px;
+		}
+	}
+}
+
+footer {
+	background-color: gray;
+	text-align: center;
+}
