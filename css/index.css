@@ -263,23 +263,18 @@ header #navigation {
 .lower table .fourth-column {
   padding: 10px 30px 10px 0;
 }
-#contact-info {
-  margin: 20px 0;
-}
 footer {
   display: flex;
   justify-content: space-between;
 }
 footer div {
+  margin: 20px 0;
   width: 48%;
 }
 footer .icons-div ul {
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-footer .icons-div ul li span {
-  padding-bottom: 20px;
 }
 .copyright {
   padding-top: 20px;
