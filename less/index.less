@@ -31,10 +31,12 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-size: 16px;
 }
 
 html {
 	width: 850px;
+	margin: auto;
 }
 ol, ul {
 	list-style: none;
@@ -68,16 +70,24 @@ a {
     box-sizing: border-box;
 }
 
-table {
+h1 {
+	font-size: 40px;
 
+}
+h3 {
+	font-size: 20px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+table {
+	width: 100%;
 	tr {
 		border: 1px solid black;
 		th {
 			font-weight: bold;
-		}
-
-		td {
-
 		}
 	}
 }
@@ -102,24 +112,23 @@ header {
 }
 
 .top {
-	display: flex;
-	flex-wrap: wrap;
-	align-content: flex-start;
+	display: box;
 	border: 1px solid black;
 	background-color: lightblue;
-	.self-photo {
-
-	}
+	padding: 10px;
+	margin: 20px auto;
 }
 
 .main {
+	margin: 20px auto;
 	display: flex;
 	div {
-		width: 49%;
+		width: 50%;
 	}
 }
 
 .lower {
+	margin: 20px auto;
 	table {
 		width: 100%;
 		text-align: left;
@@ -127,21 +136,22 @@ header {
 			background-color: lightgray;
 		}
 		.first-column {
-			padding: 5px 20px;
+			padding: 8px 20px 8px 4px;
 		}
 		.second-column {
-			padding: 5px 20px;
+			padding: 8px 30px 8px 0;
 		}
 		.third-column {
-			padding: 5px 20px;
+			padding: 8px 30px 8px 0;
 		}
 		.fourth-column {
-			padding: 5px 20px;
+			padding: 8px 30px 8px 0;
 		}
 	}
 }
 
 footer {
+	padding-bottom: 30px;
 	background-color: gray;
 	text-align: center;
 }

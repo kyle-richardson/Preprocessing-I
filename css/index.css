@@ -106,9 +106,11 @@ section {
 }
 body {
   line-height: 1;
+  font-size: 16px;
 }
 html {
   width: 850px;
+  margin: auto;
 }
 ol,
 ul {
@@ -143,6 +145,18 @@ a:active {
 * {
   box-sizing: border-box;
 }
+h1 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-size: 18px;
+}
+table {
+  width: 100%;
+}
 table tr {
   border: 1px solid black;
 }
@@ -165,17 +179,21 @@ header nav a {
   margin: 0 30px;
 }
 .top {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
+  display: box;
   border: 1px solid black;
   background-color: lightblue;
+  padding: 10px;
+  margin: 20px auto;
 }
 .main {
+  margin: 20px auto;
   display: flex;
 }
 .main div {
-  width: 49%;
+  width: 50%;
+}
+.lower {
+  margin: 20px auto;
 }
 .lower table {
   width: 100%;
@@ -185,18 +203,19 @@ header nav a {
   background-color: lightgray;
 }
 .lower table .first-column {
-  padding: 5px 20px;
+  padding: 8px 20px 8px 4px;
 }
 .lower table .second-column {
-  padding: 5px 20px;
+  padding: 8px 30px 8px 0;
 }
 .lower table .third-column {
-  padding: 5px 20px;
+  padding: 8px 30px 8px 0;
 }
 .lower table .fourth-column {
-  padding: 5px 20px;
+  padding: 8px 30px 8px 0;
 }
 footer {
+  padding-bottom: 30px;
   background-color: gray;
   text-align: center;
 }
