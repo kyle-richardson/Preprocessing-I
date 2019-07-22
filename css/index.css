@@ -126,6 +126,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: teal;
+}
+a:active {
+  color: pink;
+}
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
@@ -133,4 +143,15 @@ table {
 html,
 body {
   height: 100%;
+}
+body {
+  margin: 20px auto;
+}
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  align-content: baseline;
+}
+header nav a {
+  margin: 0 30px;
 }
