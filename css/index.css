@@ -114,6 +114,11 @@ html {
   margin: auto;
   font-family: 'Titillium Web', sans-serif;
 }
+@media (max-width: 500px) {
+  html {
+    width: 100%;
+  }
+}
 ol,
 ul {
   list-style: none;
@@ -164,15 +169,15 @@ button {
 .set-mobile {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-content: baseline;
-  padding: auto;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  padding: 0;
   width: 100%;
-  margin: 15px auto;
+  margin: 15px 0;
 }
 .set-mobile > * {
   margin: 20px 0;
-  align-self: baseline;
 }
 /* Whole document style */
 h1 {
@@ -205,10 +210,10 @@ a:active {
   color: pink;
 }
 /* container specific styling, nested format */
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
   .container {
-    width: 95%;
-    margin: 0;
+    width: 93%;
+    margin: auto;
   }
 }
 .container header #navigation {
@@ -222,15 +227,15 @@ a:active {
   .container header #navigation {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-content: baseline;
-    padding: auto;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    padding: 0;
     width: 100%;
-    margin: 15px auto;
+    margin: 15px 0;
   }
   .container header #navigation > * {
     margin: 20px 0;
-    align-self: baseline;
   }
 }
 .container .top {
@@ -246,6 +251,11 @@ a:active {
 .container .top .self-photo {
   margin-bottom: 20px;
   align-self: center;
+}
+@media screen and (max-width: 500px) {
+  .container .top .self-photo {
+    width: 100%;
+  }
 }
 .container .top .line {
   border: 1px solid gray;
@@ -270,15 +280,15 @@ a:active {
   .container .top {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-content: baseline;
-    padding: auto;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    padding: 0;
     width: 100%;
-    margin: 15px auto;
+    margin: 15px 0;
   }
   .container .top > * {
     margin: 20px 0;
-    align-self: baseline;
   }
 }
 .container .main {
@@ -287,23 +297,13 @@ a:active {
   flex-direction: row;
   justify-content: space-between;
 }
-@media screen and (max-width: 500px) {
-  .container .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: baseline;
-    padding: auto;
-    width: 100%;
-    margin: 15px auto;
-  }
-  .container .main > * {
-    margin: 20px 0;
-    align-self: baseline;
-  }
-}
 .container .main div {
   width: 48%;
+}
+@media screen and (max-width: 500px) {
+  .container .main div {
+    width: 100%;
+  }
 }
 .container .main div table {
   width: 100%;
@@ -316,6 +316,21 @@ a:active {
 }
 .container .main div table tr td {
   padding: 10px;
+}
+@media screen and (max-width: 500px) {
+  .container .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    margin: 15px 0;
+  }
+  .container .main > * {
+    margin: 20px 0;
+  }
 }
 .container .lower {
   margin: 20px auto;
@@ -350,55 +365,69 @@ a:active {
   .container footer div {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-content: baseline;
-    padding: auto;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    padding: 0;
     width: 100%;
-    margin: 15px auto;
+    margin: 15px 0;
   }
   .container footer div > * {
     margin: 20px 0;
-    align-self: baseline;
   }
+}
+.container footer #contact-info h3 {
+  margin-right: 50px;
 }
 .container footer .icons-div {
   align-self: center;
   margin-right: 40px;
 }
-.container footer .icons-div ul {
+.container footer .icons-div .icons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-end;
 }
 @media screen and (max-width: 500px) {
-  .container footer .icons-div ul {
+  .container footer .icons-div .icons {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-content: baseline;
-    padding: auto;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    padding: 0;
     width: 100%;
-    margin: 15px auto;
+    margin: 15px 0;
   }
-  .container footer .icons-div ul > * {
+  .container footer .icons-div .icons > * {
     margin: 20px 0;
-    align-self: baseline;
+  }
+  .container footer .icons-div .icons li {
+    margin: 5px 0;
+  }
+  .container footer .icons-div .icons li span {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container footer .icons-div .icons {
+    margin: 0;
   }
 }
 @media screen and (max-width: 500px) {
   .container footer {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-content: baseline;
-    padding: auto;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    padding: 0;
     width: 100%;
-    margin: 15px auto;
+    margin: 15px 0;
   }
   .container footer > * {
     margin: 20px 0;
-    align-self: baseline;
   }
 }
 .container .copyright {

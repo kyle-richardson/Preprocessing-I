@@ -39,6 +39,9 @@ html {
 	width: 850px;
 	margin: auto;
 	font-family: 'Titillium Web', sans-serif;
+	@media (max-width:500px) {
+		width: 100%;
+	}
 }
 ol, ul {
 	list-style: none;
@@ -109,14 +112,14 @@ button {
 }
 
 .set-mobile {
-		.flex-setup(column, space-evenly);
-		align-content: baseline;
-		padding: auto;
+		.flex-setup(column, center);
+		align-content: stretch;
+		align-items: center;
+		padding: 0;
 		width: 100%;
-		margin: 15px auto;
+		margin: 15px 0;
 		> * {
 			margin: 20px 0;
-			align-self: baseline;
 		}
 }
 
@@ -159,9 +162,9 @@ a {
 /* container specific styling, nested format */
 
 .container {
-	@media screen and (max-width:500px){
-		width: 95%;
-		margin: 0;
+	@media (max-width:500px){
+		width: 93%;
+		margin: auto;
 	}
 	header {
 		#navigation {
@@ -184,6 +187,9 @@ a {
 		.self-photo {
 			margin-bottom: 20px;
 			align-self: center;
+			@media screen and (max-width:500px){
+				width: 100%;
+			}
 	
 		}
 		.line {
@@ -215,11 +221,12 @@ a {
 	.main {
 		.base-margin();
 		.flex-setup(row, space-between);
-		@media screen and (max-width:500px) {
-			.set-mobile();
-		}
+		
 		div {
 			width: 48%;
+			@media screen and (max-width:500px) {
+				width: 100%;
+			}
 			table {
 				width: 100%;
 				tr {
@@ -233,7 +240,9 @@ a {
 				}
 			}
 		}
-		
+		@media screen and (max-width:500px) {
+			.set-mobile();
+		}
 	}
 	
 	.lower {
@@ -266,14 +275,30 @@ a {
 				.set-mobile();
 			}
 		}
+		#contact-info {
+			h3 {
+				margin-right: 50px;
+			}
+			
+		}
 		.icons-div {
 			align-self: center;
 			margin-right: 40px;
-			ul {
+			.icons {
 				.flex-setup(row, space-evenly);
 				align-items: flex-end;
 				@media screen and (max-width:500px) {
 					.set-mobile();
+					li {
+						margin: 5px 0;
+						span {
+							display: none;
+						}
+						
+					}
+				}
+				@media screen and (max-width:500px) {
+					margin: 0;
 				}
 				
 			}
