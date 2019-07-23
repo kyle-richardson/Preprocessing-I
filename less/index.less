@@ -100,6 +100,19 @@ button {
 @dark-color: gray;
 @button-color: teal;
 
+.flex-setup {
+	display: flex;
+
+}
+
+.base-margin {
+	margin: 20px auto;
+}
+
+.set-padding (@top, @right, @bottom, @left){
+	padding: @top @right @bottom @left;
+}
+
 
 h1 {
 	font-size: 40px;
@@ -134,7 +147,7 @@ html, body {
 }
 
 body {
-	margin: 20px auto;
+	.base-margin();
 }
 
 header {
@@ -150,25 +163,29 @@ header {
 }
 
 .top {
-	display: box;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
 	border: 1px solid @light-color;
 	background-color: @light-color;
-	padding: 20px 20px 50px 20px;
-	margin: 20px auto;
+	.set-padding(20px 20px 40px 20px);
+	.base-margin();
 	border-radius: 8px;
-	.self-photos {
+	.self-photo {
 		margin-bottom: 20px;
+		align-self: center;
+
 	}
 	.line {
 		border: 1px solid @dark-color;
-		margin: 20px 0;
+		.base-margin();
 	}
 	button {
 		background-color: white;
 		border: 1px solid @dark-color;
 		border-radius: 4px;
 		padding: 7px 20px;
-		margin: 10px auto;
+		.base-margin();
 		&:hover {
 			border-color: @button-color;
 			color: @button-color;
@@ -190,7 +207,7 @@ header {
 }
 
 .lower {
-	margin: 20px auto;
+	.base-margin();
 	table {
 		width: 100%;
 		text-align: left;
@@ -216,14 +233,17 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	div {
-		margin: 20px 0;
+		.base-margin();
 		width: 48%;
 	}
 	.icons-div {
+		align-self: center;
+		margin-right: 40px;
 		ul {
 			display: flex;
-			justify-content: center;
-			flex-direction: column;
+			justify-content: space-evenly;
+			flex-direction: row;
+			align-items: flex-end;
 			
 		}
 	}

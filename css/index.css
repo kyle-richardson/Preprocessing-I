@@ -164,6 +164,12 @@ button {
 * {
   box-sizing: border-box;
 }
+.flex-setup {
+  display: flex;
+}
+.base-margin {
+  margin: 20px auto;
+}
 h1 {
   font-size: 40px;
   margin-bottom: 5px;
@@ -205,26 +211,29 @@ header #navigation {
   width: 40%;
 }
 .top {
-  display: box;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
   border: 1px solid lightgray;
   background-color: lightgray;
-  padding: 20px 20px 50px 20px;
+  padding: 20px 20px 40px 20px;
   margin: 20px auto;
   border-radius: 8px;
 }
-.top .self-photos {
+.top .self-photo {
   margin-bottom: 20px;
+  align-self: center;
 }
 .top .line {
   border: 1px solid gray;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 .top button {
   background-color: white;
   border: 1px solid gray;
   border-radius: 4px;
   padding: 7px 20px;
-  margin: 10px auto;
+  margin: 20px auto;
 }
 .top button:hover {
   border-color: teal;
@@ -268,13 +277,18 @@ footer {
   justify-content: space-between;
 }
 footer div {
-  margin: 20px 0;
+  margin: 20px auto;
   width: 48%;
+}
+footer .icons-div {
+  align-self: center;
+  margin-right: 40px;
 }
 footer .icons-div ul {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: flex-end;
 }
 .copyright {
   padding-top: 20px;
