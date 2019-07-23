@@ -164,9 +164,6 @@ button {
 * {
   box-sizing: border-box;
 }
-.flex-setup {
-  display: flex;
-}
 .base-margin {
   margin: 20px auto;
 }
@@ -201,16 +198,17 @@ body {
 body {
   margin: 20px auto;
 }
-header .contact-info {
+.container header .contact-info {
   display: none;
 }
-header #navigation {
+.container header #navigation {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-content: baseline;
   width: 40%;
 }
-.top {
+.container .top {
   display: flex;
   flex-direction: column;
   align-content: flex-start;
@@ -220,77 +218,78 @@ header #navigation {
   margin: 20px auto;
   border-radius: 8px;
 }
-.top .self-photo {
+.container .top .self-photo {
   margin-bottom: 20px;
   align-self: center;
 }
-.top .line {
+.container .top .line {
   border: 1px solid gray;
   margin: 20px auto;
 }
-.top button {
+.container .top button {
   background-color: white;
   border: 1px solid gray;
   border-radius: 4px;
   padding: 7px 20px;
   margin: 20px auto;
 }
-.top button:hover {
+.container .top button:hover {
   border-color: teal;
   color: teal;
 }
-.top button:active {
+.container .top button:active {
   background-color: lightgray;
 }
-.main {
-  margin: 30px auto;
+.container .main {
+  margin: 20px auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
-.main div {
+.container .main div {
   width: 48%;
 }
-.lower {
+.container .lower {
   margin: 20px auto;
 }
-.lower table {
+.container .lower table {
   width: 100%;
   text-align: left;
 }
-.lower table .dark-cell {
+.container .lower table .dark-cell {
   background-color: lightgray;
 }
-.lower table .first-column {
+.container .lower table .first-column {
   padding: 10px 20px 10px 4px;
 }
-.lower table .second-column {
+.container .lower table .second-column {
   padding: 10px 30px 10px 0;
 }
-.lower table .third-column {
+.container .lower table .third-column {
   padding: 10px 30px 10px 0;
 }
-.lower table .fourth-column {
+.container .lower table .fourth-column {
   padding: 10px 30px 10px 0;
 }
-footer {
+.container footer {
   display: flex;
   justify-content: space-between;
 }
-footer div {
+.container footer div {
   margin: 20px auto;
   width: 48%;
 }
-footer .icons-div {
+.container footer .icons-div {
   align-self: center;
   margin-right: 40px;
 }
-footer .icons-div ul {
+.container footer .icons-div ul {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
   align-items: flex-end;
 }
-.copyright {
+.container .copyright {
   padding-top: 20px;
   color: white;
   text-align: center;
