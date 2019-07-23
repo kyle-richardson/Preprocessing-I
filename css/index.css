@@ -106,7 +106,8 @@ section {
 }
 body {
   line-height: 1;
-  font-size: 16px;
+  font-size: 62.5%;
+  font-size: 1.03rem;
 }
 html {
   width: 850px;
@@ -132,16 +133,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-a {
-  text-decoration: none;
-  color: black;
-}
-a:hover {
-  color: teal;
-}
-a:active {
-  color: pink;
-}
+/* button style reset addition */
 button {
   border: none;
   margin: 0;
@@ -164,32 +156,36 @@ button {
 * {
   box-sizing: border-box;
 }
+/* Variables */
+/* Mixins */
 .base-margin {
   margin: 20px auto;
 }
+.set-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: baseline;
+  padding: auto;
+  width: 100%;
+  margin: 15px auto;
+}
+.set-mobile > * {
+  margin: 20px 0;
+  align-self: baseline;
+}
+/* Whole document style */
 h1 {
-  font-size: 40px;
+  font-size: 2.75rem;
   margin-bottom: 5px;
 }
 h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
 h4 {
-  font-size: 18px;
-}
-table {
-  width: 100%;
-}
-table tr {
-  border: 1px solid lightgray;
-}
-table tr th {
-  font-weight: bold;
-}
-table tr td {
-  padding: 10px;
+  font-size: 1.1rem;
 }
 html,
 body {
@@ -198,8 +194,22 @@ body {
 body {
   margin: 20px auto;
 }
-.container header .contact-info {
-  display: none;
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: teal;
+}
+a:active {
+  color: pink;
+}
+/* container specific styling, nested format */
+@media screen and (max-width: 500px) {
+  .container {
+    width: 95%;
+    margin: 0;
+  }
 }
 .container header #navigation {
   display: flex;
@@ -208,10 +218,25 @@ body {
   align-content: baseline;
   width: 40%;
 }
+@media screen and (max-width: 500px) {
+  .container header #navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: baseline;
+    padding: auto;
+    width: 100%;
+    margin: 15px auto;
+  }
+  .container header #navigation > * {
+    margin: 20px 0;
+    align-self: baseline;
+  }
+}
 .container .top {
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
+  justify-content: space-evenly;
   border: 1px solid lightgray;
   background-color: lightgray;
   padding: 20px 20px 40px 20px;
@@ -225,6 +250,7 @@ body {
 .container .top .line {
   border: 1px solid gray;
   margin: 20px auto;
+  width: 100%;
 }
 .container .top button {
   background-color: white;
@@ -240,14 +266,56 @@ body {
 .container .top button:active {
   background-color: lightgray;
 }
+@media screen and (max-width: 500px) {
+  .container .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: baseline;
+    padding: auto;
+    width: 100%;
+    margin: 15px auto;
+  }
+  .container .top > * {
+    margin: 20px 0;
+    align-self: baseline;
+  }
+}
 .container .main {
   margin: 20px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+@media screen and (max-width: 500px) {
+  .container .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: baseline;
+    padding: auto;
+    width: 100%;
+    margin: 15px auto;
+  }
+  .container .main > * {
+    margin: 20px 0;
+    align-self: baseline;
+  }
+}
 .container .main div {
   width: 48%;
+}
+.container .main div table {
+  width: 100%;
+}
+.container .main div table tr {
+  border: 1px solid lightgray;
+}
+.container .main div table tr th {
+  font-weight: bold;
+}
+.container .main div table tr td {
+  padding: 10px;
 }
 .container .lower {
   margin: 20px auto;
@@ -256,28 +324,42 @@ body {
   width: 100%;
   text-align: left;
 }
+.container .lower table tr {
+  border: 1px solid lightgray;
+}
+.container .lower table tr > th,
+.container .lower table tr td {
+  padding: 10px;
+}
+.container .lower table tr th {
+  font-weight: bold;
+}
 .container .lower table .dark-cell {
   background-color: lightgray;
 }
-.container .lower table .first-column {
-  padding: 10px 20px 10px 4px;
-}
-.container .lower table .second-column {
-  padding: 10px 30px 10px 0;
-}
-.container .lower table .third-column {
-  padding: 10px 30px 10px 0;
-}
-.container .lower table .fourth-column {
-  padding: 10px 30px 10px 0;
-}
 .container footer {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 .container footer div {
   margin: 20px auto;
   width: 48%;
+}
+@media screen and (max-width: 500px) {
+  .container footer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: baseline;
+    padding: auto;
+    width: 100%;
+    margin: 15px auto;
+  }
+  .container footer div > * {
+    margin: 20px 0;
+    align-self: baseline;
+  }
 }
 .container footer .icons-div {
   align-self: center;
@@ -285,9 +367,39 @@ body {
 }
 .container footer .icons-div ul {
   display: flex;
-  justify-content: space-evenly;
   flex-direction: row;
+  justify-content: space-evenly;
   align-items: flex-end;
+}
+@media screen and (max-width: 500px) {
+  .container footer .icons-div ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: baseline;
+    padding: auto;
+    width: 100%;
+    margin: 15px auto;
+  }
+  .container footer .icons-div ul > * {
+    margin: 20px 0;
+    align-self: baseline;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: baseline;
+    padding: auto;
+    width: 100%;
+    margin: 15px auto;
+  }
+  .container footer > * {
+    margin: 20px 0;
+    align-self: baseline;
+  }
 }
 .container .copyright {
   padding-top: 20px;
@@ -295,4 +407,5 @@ body {
   text-align: center;
   padding-bottom: 30px;
   background-color: gray;
+  margin: auto;
 }

@@ -31,7 +31,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-size: 16px;
+	font-size: 62.5%;
+	font-size: 1.03rem;
 }
 
 html {
@@ -55,16 +56,9 @@ table {
 	border-spacing: 0;
 }
 
-a {
-	text-decoration: none;
-	color: black;
-	&:hover {
-		color: teal;
-	}
-	&:active {
-		color: pink;
-	}
-}
+
+
+/* button style reset addition */
 
 button {
 
@@ -96,52 +90,51 @@ button {
     box-sizing: border-box;
 }
 
+/* Variables */
+
 @light-color: lightgray;
 @dark-color: gray;
 @button-color: teal;
+
+/* Mixins */
 
 .flex-setup (@direction, @justify){
 	display: flex;
 	flex-direction: @direction;
 	justify-content: @justify;
-
 }
 
 .base-margin {
 	margin: 20px auto;
 }
 
-// .set-padding (@top, @right, @bottom, @left){
-// 	padding: @top @right @bottom @left;
-// }
+.set-mobile {
+		.flex-setup(column, space-evenly);
+		align-content: baseline;
+		padding: auto;
+		width: 100%;
+		margin: 15px auto;
+		> * {
+			margin: 20px 0;
+			align-self: baseline;
+		}
+}
 
+/* Whole document style */
 
 h1 {
-	font-size: 40px;
+	font-size: 2.75rem;
 	margin-bottom: 5px;
 
 }
 h3 {
-	font-size: 20px;
+	font-size: 1.25rem;
 	font-weight: bold;
 	margin-bottom: 5px;
 }
 
 h4 {
-	font-size: 18px;
-}
-
-table {
-	width: 100%;
-	tr {
-		border: 1px solid @light-color;
-		th {
-			font-weight: bold;
-		}
-		td {
-			padding: 10px;
-		}
-	}
+	font-size: 1.1rem;
 }
 
 html, body {
@@ -152,26 +145,42 @@ body {
 	.base-margin();
 }
 
+a {
+	text-decoration: none;
+	color: black;
+	&:hover {
+		color: teal;
+	}
+	&:active {
+		color: pink;
+	}
+}
+
+/* container specific styling, nested format */
+
 .container {
+	@media screen and (max-width:500px){
+		width: 95%;
+		margin: 0;
+	}
 	header {
-		.contact-info {
-			display: none;
-		}
 		#navigation {
-			.flex-setup (row, space-between);
+			.flex-setup(row, space-between);
 			align-content: baseline;
 			width: 40%;
+			@media screen and (max-width:500px) {
+				.set-mobile();
+			}
 		}
 	}
 	.top {
-		display: flex;
-		flex-direction: column;
-		align-content: flex-start;
+		.flex-setup(column, space-evenly);
 		border: 1px solid @light-color;
 		background-color: @light-color;
 		padding: 20px 20px 40px 20px;
 		.base-margin();
 		border-radius: 8px;
+		
 		.self-photo {
 			margin-bottom: 20px;
 			align-self: center;
@@ -180,6 +189,7 @@ body {
 		.line {
 			border: 1px solid @dark-color;
 			.base-margin();
+			width: 100%;
 		}
 		button {
 			background-color: white;
@@ -195,15 +205,35 @@ body {
 			&:active {
 				background-color: @light-color;
 			}
+		
+		}
+		@media screen and (max-width:500px) {
+			.set-mobile();
 		}
 	}
 	
 	.main {
 		.base-margin();
-		.flex-setup (row, space-between);
+		.flex-setup(row, space-between);
+		@media screen and (max-width:500px) {
+			.set-mobile();
+		}
 		div {
 			width: 48%;
+			table {
+				width: 100%;
+				tr {
+					border: 1px solid @light-color;
+					th {
+						font-weight: bold;
+					}
+					td {
+						padding: 10px;
+					}
+				}
+			}
 		}
+		
 	}
 	
 	.lower {
@@ -211,41 +241,45 @@ body {
 		table {
 			width: 100%;
 			text-align: left;
+			tr {
+				border: 1px solid @light-color;
+				> th, td {
+					padding: 10px;
+				}
+				th {
+					font-weight: bold;	
+				}
+			}
 			.dark-cell {
 				background-color: @light-color;
 			}
-			.first-column {
-				padding: 10px 20px 10px 4px;
-			}
-			.second-column {
-				padding: 10px 30px 10px 0;
-			}
-			.third-column {
-				padding: 10px 30px 10px 0;
-			}
-			.fourth-column {
-				padding: 10px 30px 10px 0;
-			}
 		}
+			
 	}
 	
 	footer {
-		display: flex;
-		justify-content: space-between;
+		.flex-setup(row,space-between);
 		div {
 			.base-margin();
 			width: 48%;
+			@media screen and (max-width:500px) {
+				.set-mobile();
+			}
 		}
 		.icons-div {
 			align-self: center;
 			margin-right: 40px;
 			ul {
-				display: flex;
-				justify-content: space-evenly;
-				flex-direction: row;
+				.flex-setup(row, space-evenly);
 				align-items: flex-end;
+				@media screen and (max-width:500px) {
+					.set-mobile();
+				}
 				
 			}
+		}
+		@media screen and (max-width:500px) {
+			.set-mobile();
 		}
 	}
 	
@@ -255,8 +289,6 @@ body {
 		text-align: center;
 		padding-bottom: 30px;
 		background-color: @dark-color;
+		margin: auto;
 	  }
 }
-
-
-
