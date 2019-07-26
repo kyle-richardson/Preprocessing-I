@@ -6,12 +6,14 @@
 
 /* Variables */
 
-@light-color: lightgray;
-@dark-color: gray;
-@button-color: teal;
+@background-color: white;
+@light-color: rgb(196, 225, 252);
+@dark-color: rgb(45, 100, 145);
+@button-color: white;
+@anchor-hover-color: @light-color;
 
 @mobile: ~'(max-width:500px)';
-@tablet: ~'(max-width:850px)';
+@tablet: ~'(max-width:880px)';
 
 /* Mixins */
 
@@ -31,10 +33,6 @@
 		align-items: center;
 		padding: 0;
 		width: 100%;
-		margin: 15px 0;
-		> * {
-			margin: 20px 0;
-		}
 }
 
 html, body, div, span, applet, object, iframe,
@@ -62,19 +60,22 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-	font-size: 62.5%;
-	font-size: 1.03rem;
-}
+
 
 html {
+	font-size: 62.5%;
+	background-color: @background-color;
 	width: 850px;
 	margin: auto;
 	font-family: 'Titillium Web', sans-serif;
 	@media @tablet {
 		width: 100%;
 	}
+	
+}
+body {
+	line-height: 1;
+	font-size: 1.3rem;
 }
 ol, ul {
 	list-style: none;
@@ -131,53 +132,60 @@ button {
 /* Whole document style */
 
 h1 {
-	font-size: 2.75rem;
+	font-size: 3rem;
 	margin-bottom: 5px;
 
 }
 h3 {
-	font-size: 1.25rem;
+	font-size: 2rem;
 	font-weight: bold;
 	margin-bottom: 5px;
 }
 
 h4 {
-	font-size: 1.1rem;
+	font-size: 1.7rem;
 }
 
 html, body {
     height: 100%;
 }
 
-body {
-	.base-margin();
-}
-
 a {
 	text-decoration: none;
 	color: black;
 	&:hover {
-		color: teal;
-	}
-	&:active {
-		color: pink;
+		color: @anchor-hover-color;
 	}
 }
 
 /* container specific styling, nested format */
 
 .container {
+	
 	@media @tablet{
-		width: 93%;
+		width: 91%;
 		margin: auto;
 	}
 	header {
+		background-color: @dark-color;
+		padding: 20px;
 		#navigation {
 			.flex-setup(row, space-between);
 			align-content: baseline;
 			width: 40%;
+			@media @tablet {
+				width: 60%;
+				margin: auto;
+			}
 			@media @mobile {
 				.set-mobile();
+			}
+			a {
+				margin: 7px 0;
+				color: white;
+				&:hover {
+					color: @anchor-hover-color;
+				}
 			}
 		}
 	}
@@ -186,13 +194,15 @@ a {
 		border: 1px solid @light-color;
 		background-color: @light-color;
 		padding: 20px 20px 40px 20px;
-		.base-margin();
-		border-radius: 8px;
-		
+		@media @mobile {
+			.set-mobile();
+			padding: 5%;
+		}
 		.self-photo {
+			border-radius: 8px;
 			margin-bottom: 20px;
 			align-self: center;
-			@media @tablet{
+			@media @mobile{
 				width: 100%;
 			}
 	
@@ -203,24 +213,23 @@ a {
 			width: 100%;
 		}
 		button {
-			background-color: white;
+			background-color: @dark-color;
 			border: 1px solid @dark-color;
 			border-radius: 4px;
 			padding: 7px 20px;
+			color: white;
 			.base-margin();
 			&:hover {
-				border-color: @button-color;
-				color: @button-color;
+				background-color: lighten(@dark-color,15%);
 			}
 	
 			&:active {
-				background-color: @light-color;
+				background-color: lighten(@dark-color,30%);
+
 			}
 		
 		}
-		@media @mobile {
-			.set-mobile();
-		}
+		
 	}
 	
 	.main {
@@ -229,13 +238,14 @@ a {
 		
 		div {
 			width: 48%;
-			@media @tablet {
+			@media @mobile {
+				.base-margin();
 				width: 100%;
 			}
 			table {
 				width: 100%;
 				tr {
-					border: 1px solid @light-color;
+					border: 1px solid @dark-color;
 					th {
 						font-weight: bold;
 					}
@@ -245,6 +255,12 @@ a {
 				}
 			}
 		}
+		// .intro {
+		// 	p {
+		// 		border: 1px solid @dark-color;
+		// 	}
+			
+		// }
 		@media @mobile {
 			.set-mobile();
 		}
@@ -256,7 +272,7 @@ a {
 			width: 100%;
 			text-align: left;
 			tr {
-				border: 1px solid @light-color;
+				border: 1px solid @dark-color;
 				> th, td {
 					padding: 10px;
 				}
@@ -293,6 +309,7 @@ a {
 				.flex-setup(row, space-evenly);
 				align-items: flex-end;
 				@media @mobile {
+					margin: 0;
 					.set-mobile();
 					.flex-setup(row, center);
 					li {
@@ -303,10 +320,9 @@ a {
 						
 					}
 				}
-				@media @mobile {
-					margin: 0;
-				}
-				
+			}
+			@media @mobile {
+				margin: 0;
 			}
 		}
 		@media @mobile {
@@ -321,5 +337,5 @@ a {
 		padding-bottom: 30px;
 		background-color: @dark-color;
 		margin: auto;
-	  }
+	}
 }
