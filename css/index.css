@@ -2,6 +2,24 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+/* Variables */
+/* Mixins */
+.base-margin {
+  margin: 20px auto;
+}
+.set-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  margin: 15px 0;
+}
+.set-mobile > * {
+  margin: 20px 0;
+}
 html,
 body,
 div,
@@ -114,7 +132,7 @@ html {
   margin: auto;
   font-family: 'Titillium Web', sans-serif;
 }
-@media (max-width: 500px) {
+@media (max-width:850px) {
   html {
     width: 100%;
   }
@@ -161,24 +179,6 @@ button {
 * {
   box-sizing: border-box;
 }
-/* Variables */
-/* Mixins */
-.base-margin {
-  margin: 20px auto;
-}
-.set-mobile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: stretch;
-  align-items: center;
-  padding: 0;
-  width: 100%;
-  margin: 15px 0;
-}
-.set-mobile > * {
-  margin: 20px 0;
-}
 /* Whole document style */
 h1 {
   font-size: 2.75rem;
@@ -210,7 +210,7 @@ a:active {
   color: pink;
 }
 /* container specific styling, nested format */
-@media (max-width: 500px) {
+@media (max-width:850px) {
   .container {
     width: 93%;
     margin: auto;
@@ -223,7 +223,7 @@ a:active {
   align-content: baseline;
   width: 40%;
 }
-@media screen and (max-width: 500px) {
+@media (max-width:500px) {
   .container header #navigation {
     display: flex;
     flex-direction: column;
@@ -252,7 +252,7 @@ a:active {
   margin-bottom: 20px;
   align-self: center;
 }
-@media screen and (max-width: 500px) {
+@media (max-width:850px) {
   .container .top .self-photo {
     width: 100%;
   }
@@ -276,7 +276,7 @@ a:active {
 .container .top button:active {
   background-color: lightgray;
 }
-@media screen and (max-width: 500px) {
+@media (max-width:500px) {
   .container .top {
     display: flex;
     flex-direction: column;
@@ -300,7 +300,7 @@ a:active {
 .container .main div {
   width: 48%;
 }
-@media screen and (max-width: 500px) {
+@media (max-width:850px) {
   .container .main div {
     width: 100%;
   }
@@ -317,7 +317,7 @@ a:active {
 .container .main div table tr td {
   padding: 10px;
 }
-@media screen and (max-width: 500px) {
+@media (max-width:500px) {
   .container .main {
     display: flex;
     flex-direction: column;
@@ -361,7 +361,7 @@ a:active {
   margin: 20px auto;
   width: 48%;
 }
-@media screen and (max-width: 500px) {
+@media (max-width:500px) {
   .container footer div {
     display: flex;
     flex-direction: column;
@@ -389,7 +389,7 @@ a:active {
   justify-content: space-evenly;
   align-items: flex-end;
 }
-@media screen and (max-width: 500px) {
+@media (max-width:500px) {
   .container footer .icons-div .icons {
     flex-direction: column;
     align-content: stretch;
@@ -411,12 +411,12 @@ a:active {
     display: none;
   }
 }
-@media screen and (max-width: 500px) {
+@media (max-width:500px) {
   .container footer .icons-div .icons {
     margin: 0;
   }
 }
-@media screen and (max-width: 500px) {
+@media (max-width:500px) {
   .container footer {
     display: flex;
     flex-direction: column;

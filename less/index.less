@@ -4,6 +4,39 @@
    License: none (public domain)
 */
 
+/* Variables */
+
+@light-color: lightgray;
+@dark-color: gray;
+@button-color: teal;
+
+@mobile: ~'(max-width:500px)';
+@tablet: ~'(max-width:850px)';
+
+/* Mixins */
+
+.flex-setup (@direction, @justify){
+	display: flex;
+	flex-direction: @direction;
+	justify-content: @justify;
+}
+
+.base-margin {
+	margin: 20px auto;
+}
+
+.set-mobile {
+		.flex-setup(column, center);
+		align-content: stretch;
+		align-items: center;
+		padding: 0;
+		width: 100%;
+		margin: 15px 0;
+		> * {
+			margin: 20px 0;
+		}
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -39,7 +72,7 @@ html {
 	width: 850px;
 	margin: auto;
 	font-family: 'Titillium Web', sans-serif;
-	@media (max-width:500px) {
+	@media @tablet {
 		width: 100%;
 	}
 }
@@ -93,37 +126,7 @@ button {
     box-sizing: border-box;
 }
 
-/* Variables */
 
-@light-color: lightgray;
-@dark-color: gray;
-@button-color: teal;
-
-@mobile: ~'(max-width:500px)';
-
-/* Mixins */
-
-.flex-setup (@direction, @justify){
-	display: flex;
-	flex-direction: @direction;
-	justify-content: @justify;
-}
-
-.base-margin {
-	margin: 20px auto;
-}
-
-.set-mobile {
-		.flex-setup(column, center);
-		align-content: stretch;
-		align-items: center;
-		padding: 0;
-		width: 100%;
-		margin: 15px 0;
-		> * {
-			margin: 20px 0;
-		}
-}
 
 /* Whole document style */
 
@@ -164,7 +167,7 @@ a {
 /* container specific styling, nested format */
 
 .container {
-	@media @mobile{
+	@media @tablet{
 		width: 93%;
 		margin: auto;
 	}
@@ -189,7 +192,7 @@ a {
 		.self-photo {
 			margin-bottom: 20px;
 			align-self: center;
-			@media @mobile{
+			@media @tablet{
 				width: 100%;
 			}
 	
@@ -226,7 +229,7 @@ a {
 		
 		div {
 			width: 48%;
-			@media @mobile {
+			@media @tablet {
 				width: 100%;
 			}
 			table {
