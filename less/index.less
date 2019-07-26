@@ -99,6 +99,8 @@ button {
 @dark-color: gray;
 @button-color: teal;
 
+@mobile: ~'(max-width:500px)';
+
 /* Mixins */
 
 .flex-setup (@direction, @justify){
@@ -162,7 +164,7 @@ a {
 /* container specific styling, nested format */
 
 .container {
-	@media (max-width:500px){
+	@media @mobile{
 		width: 93%;
 		margin: auto;
 	}
@@ -171,7 +173,7 @@ a {
 			.flex-setup(row, space-between);
 			align-content: baseline;
 			width: 40%;
-			@media screen and (max-width:500px) {
+			@media @mobile {
 				.set-mobile();
 			}
 		}
@@ -187,7 +189,7 @@ a {
 		.self-photo {
 			margin-bottom: 20px;
 			align-self: center;
-			@media screen and (max-width:500px){
+			@media @mobile{
 				width: 100%;
 			}
 	
@@ -213,7 +215,7 @@ a {
 			}
 		
 		}
-		@media screen and (max-width:500px) {
+		@media @mobile {
 			.set-mobile();
 		}
 	}
@@ -224,7 +226,7 @@ a {
 		
 		div {
 			width: 48%;
-			@media screen and (max-width:500px) {
+			@media @mobile {
 				width: 100%;
 			}
 			table {
@@ -240,7 +242,7 @@ a {
 				}
 			}
 		}
-		@media screen and (max-width:500px) {
+		@media @mobile {
 			.set-mobile();
 		}
 	}
@@ -271,7 +273,7 @@ a {
 		div {
 			.base-margin();
 			width: 48%;
-			@media screen and (max-width:500px) {
+			@media @mobile {
 				.set-mobile();
 			}
 		}
@@ -287,7 +289,7 @@ a {
 			.icons {
 				.flex-setup(row, space-evenly);
 				align-items: flex-end;
-				@media screen and (max-width:500px) {
+				@media @mobile {
 					.set-mobile();
 					.flex-setup(row, center);
 					li {
@@ -298,13 +300,13 @@ a {
 						
 					}
 				}
-				@media screen and (max-width:500px) {
+				@media @mobile {
 					margin: 0;
 				}
 				
 			}
 		}
-		@media screen and (max-width:500px) {
+		@media @mobile {
 			.set-mobile();
 		}
 	}
