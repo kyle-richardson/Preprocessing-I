@@ -382,6 +382,17 @@ a:hover {
   justify-content: space-evenly;
   align-items: flex-end;
 }
+.container footer .icons-div .icons i {
+  font-size: 2.5rem;
+  border: 1px solid #2d6491;
+  border-radius: 2.5rem;
+  padding: 5px;
+  color: #2d6491;
+}
+.container footer .icons-div .icons i:hover {
+  border-color: #c4e1fc;
+  color: #c4e1fc;
+}
 @media (max-width:500px) {
   .container footer .icons-div .icons {
     margin: 0;
@@ -396,9 +407,6 @@ a:hover {
   }
   .container footer .icons-div .icons li {
     margin: 5px;
-  }
-  .container footer .icons-div .icons li span {
-    display: none;
   }
 }
 @media (max-width:500px) {
