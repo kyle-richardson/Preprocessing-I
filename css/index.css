@@ -226,12 +226,8 @@ a:hover {
 }
 @media (max-width:500px) {
   .container header #navigation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: stretch;
-    align-items: center;
-    padding: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
     width: 100%;
   }
 }
@@ -281,7 +277,7 @@ a:hover {
   background-color: #2d6491;
   border: 1px solid #2d6491;
   border-radius: 4px;
-  padding: 7px 20px;
+  padding: 10px 30px;
   color: white;
   margin: 20px auto;
 }
@@ -360,12 +356,6 @@ a:hover {
 }
 @media (max-width:500px) {
   .container footer div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: stretch;
-    align-items: center;
-    padding: 0;
     width: 100%;
   }
 }
