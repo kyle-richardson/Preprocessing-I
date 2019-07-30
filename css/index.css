@@ -356,12 +356,6 @@ a:hover {
 }
 @media (max-width:500px) {
   .container footer div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: stretch;
-    align-items: center;
-    padding: 0;
     width: 100%;
   }
 }
