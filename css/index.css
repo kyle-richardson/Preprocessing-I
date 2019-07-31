@@ -132,7 +132,7 @@ html {
 }
 body {
   line-height: 1;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 ol,
 ul {
@@ -178,16 +178,16 @@ button {
 }
 /* Whole document style */
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 5px;
 }
 h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
 h4 {
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 html,
 body {
@@ -242,9 +242,10 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   border: 1px solid #c4e1fc;
   background-color: #c4e1fc;
-  padding: 20px 20px 40px 20px;
+  padding: 1.5rem;
 }
 @media (max-width:500px) {
   .container .top {
@@ -273,19 +274,9 @@ a:hover {
   margin: 20px auto;
   width: 100%;
 }
-.container .top button {
-  background-color: #2d6491;
-  border: 1px solid #2d6491;
-  border-radius: 4px;
-  padding: 10px 30px;
-  color: white;
-  margin: 20px auto;
-}
-.container .top button:hover {
-  background-color: #458cc5;
-}
-.container .top button:active {
-  background-color: #80b0d7;
+.container .top h1,
+.container .top h4 {
+  text-align: center;
 }
 .container .main {
   margin: 20px auto;
@@ -298,7 +289,6 @@ a:hover {
 }
 @media (max-width:500px) {
   .container .main div {
-    margin: 20px auto;
     width: 100%;
   }
 }
@@ -313,6 +303,31 @@ a:hover {
 }
 .container .main div table tr td {
   padding: 10px;
+}
+.container .main #intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .main #intro button {
+  background-color: #2d6491;
+  border: 1px solid #2d6491;
+  border-radius: 8px;
+  padding: 10px 40px;
+  color: white;
+  margin: 20px auto;
+}
+@media (max-width:500px) {
+  .container .main #intro button {
+    width: 80%;
+    align-self: center;
+  }
+}
+.container .main #intro button:hover {
+  background-color: #458cc5;
+}
+.container .main #intro button:active {
+  background-color: #80b0d7;
 }
 @media (max-width:500px) {
   .container .main {
