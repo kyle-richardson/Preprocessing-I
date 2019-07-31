@@ -75,7 +75,7 @@ html {
 }
 body {
 	line-height: 1;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 }
 ol, ul {
 	list-style: none;
@@ -132,18 +132,18 @@ button {
 /* Whole document style */
 
 h1 {
-	font-size: 3rem;
+	font-size: 4rem;
 	margin-bottom: 5px;
 
 }
 h3 {
-	font-size: 2rem;
+	font-size: 2.2rem;
 	font-weight: bold;
 	margin-bottom: 5px;
 }
 
 h4 {
-	font-size: 1.7rem;
+	font-size: 2rem;
 }
 
 html, body {
@@ -193,9 +193,10 @@ a {
 	}
 	.top {
 		.flex-setup(column, space-evenly);
+		align-items: center;
 		border: 1px solid @light-color;
 		background-color: @light-color;
-		padding: 20px 20px 40px 20px;
+		padding: 1.5rem;;
 		@media @mobile {
 			.set-mobile();
 			padding: 5%;
@@ -214,22 +215,8 @@ a {
 			.base-margin();
 			width: 100%;
 		}
-		button {
-			background-color: @dark-color;
-			border: 1px solid @dark-color;
-			border-radius: 4px;
-			padding: 10px 30px;
-			color: white;
-			.base-margin();
-			&:hover {
-				background-color: lighten(@dark-color,15%);
-			}
-	
-			&:active {
-				background-color: lighten(@dark-color,30%);
-
-			}
-		
+		h1,h4 {
+			text-align: center;
 		}
 		
 	}
@@ -241,7 +228,7 @@ a {
 		div {
 			width: 48%;
 			@media @mobile {
-				.base-margin();
+				// .base-margin();
 				width: 100%;
 			}
 			table {
@@ -257,12 +244,31 @@ a {
 				}
 			}
 		}
-		// .intro {
-		// 	p {
-		// 		border: 1px solid @dark-color;
-		// 	}
+		#intro {
+			.flex-setup(column, space-between);
+			button {
+				background-color: @dark-color;
+				border: 1px solid @dark-color;
+				border-radius: 8px;
+				padding: 10px 40px;
+				color: white;
+				.base-margin();
+				@media @mobile {
+					width: 80%;
+					align-self: center;
+				}
+				&:hover {
+					background-color: lighten(@dark-color,15%);
+				}
+		
+				&:active {
+					background-color: lighten(@dark-color,30%);
+	
+				}
 			
-		// }
+			}
+			
+		}
 		@media @mobile {
 			.set-mobile();
 		}
