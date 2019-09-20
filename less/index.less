@@ -174,7 +174,7 @@ a {
 			align-content: baseline;
 			width: 40%;
 			@media @tablet {
-				width: 60%;
+				width: 80%;
 				margin: auto;
 			}
 			@media @mobile {
@@ -246,27 +246,46 @@ a {
 		}
 		#intro {
 			.flex-setup(column, space-between);
-			button {
-				background-color: @dark-color;
-				border: 1px solid @dark-color;
-				border-radius: 8px;
-				padding: 10px 40px;
-				color: white;
-				.base-margin();
-				@media @mobile {
-					width: 80%;
-					align-self: center;
-				}
-				&:hover {
-					background-color: lighten(@dark-color,15%);
-				}
-		
-				&:active {
-					background-color: lighten(@dark-color,30%);
-	
-				}
+			.buttons {
+				.flex-setup(row, space-evenly);
+				align-self: center;
+				width: 100%;
+				a {
+					text-align: center;
+					width: 150px;
+					background-color: @dark-color;
+					border: 1px solid @dark-color;
+					border-radius: 8px;
+					padding: 10px;
+					color: white;
+					margin: 10px;
+					@media @mobile {
+						width: 100%;
+						align-self: center;
+						margin:0;
+						border-radius: 0;
+						&:first-child {
+							border-bottom-color: @light-color;
+							margin-top: 10px;
+						}
+						&:last-child {
+							margin-bottom: 10px;
+						}
+					}
+					&:hover {
+						background-color: lighten(@dark-color,15%);
+					}
 			
+					&:active {
+						background-color: lighten(@dark-color,30%);
+		
+					}
+				}
+				@media @mobile {
+					flex-direction: column;
+				}
 			}
+			
 			
 		}
 		@media @mobile {

@@ -220,7 +220,7 @@ a:hover {
 }
 @media (max-width:880px) {
   .container header #navigation {
-    width: 60%;
+    width: 80%;
     margin: auto;
   }
 }
@@ -309,25 +309,48 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
 }
-.container .main #intro button {
+.container .main #intro .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-self: center;
+  width: 100%;
+}
+.container .main #intro .buttons a {
+  text-align: center;
+  width: 150px;
   background-color: #2d6491;
   border: 1px solid #2d6491;
   border-radius: 8px;
-  padding: 10px 40px;
+  padding: 10px;
   color: white;
-  margin: 20px auto;
+  margin: 10px;
 }
 @media (max-width:500px) {
-  .container .main #intro button {
-    width: 80%;
+  .container .main #intro .buttons a {
+    width: 100%;
     align-self: center;
+    margin: 0;
+    border-radius: 0;
+  }
+  .container .main #intro .buttons a:first-child {
+    border-bottom-color: #c4e1fc;
+    margin-top: 10px;
+  }
+  .container .main #intro .buttons a:last-child {
+    margin-bottom: 10px;
   }
 }
-.container .main #intro button:hover {
+.container .main #intro .buttons a:hover {
   background-color: #458cc5;
 }
-.container .main #intro button:active {
+.container .main #intro .buttons a:active {
   background-color: #80b0d7;
+}
+@media (max-width:500px) {
+  .container .main #intro .buttons {
+    flex-direction: column;
+  }
 }
 @media (max-width:500px) {
   .container .main {
